@@ -3,6 +3,10 @@ let currentPlayer = ''
 let playerX = 'X'
 let playerO = 'O'
 let reset = document.querySelector('#reset')
+let selectPlayerStyle = document.querySelector('#box-status').style
+let boxContainer = document.querySelector('#box-container')
+
+
 
 
 for (let i = 0; i < boxes.length; i++) {
@@ -32,6 +36,27 @@ function resetGame() {
         if(element.innerHTML !== '') {
             element.innerHTML = ''
         }
+        currentPlayer = ''
+        selectPlayerStyle.display = 'flex'
+        boxContainer.style.display = 'none'
+        reset.style.display = 'none'
+    }
+}
+
+function selectPlayerx() {
+    if(currentPlayer === '') {
+        currentPlayer = playerX
+        selectPlayerStyle.display = 'none'
+        boxContainer.style.display = 'grid'
+        reset.style.display = 'flex'
+    }
+}
+function selectPlayero() {
+    if(currentPlayer === '') {
+        currentPlayer = playerO
+        selectPlayerStyle.display = 'none'
+        boxContainer.style.display = 'grid'
+        reset.style.display = 'flex'
     }
 }
 
