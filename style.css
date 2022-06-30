@@ -45,6 +45,7 @@
     padding: 10px 15px;
     background-color: rgb(50, 50, 209);
     color: white;
+    border-radius: 10px;
 }
 #box-status button:hover{
     background-color: crimson;
@@ -74,5 +75,10 @@
     background-color: rgb(28, 129, 136);
     opacity: 0.6;
     color: white;
-
+}
+#winner-container{
+    display: none;
+    font-size: 4rem;
+    color: lightseagreen;
+    justify-content: center;
 }
