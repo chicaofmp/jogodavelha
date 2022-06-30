@@ -34,6 +34,8 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    padding: 100px;
+    border-radius: 10px;
 }
 #box-status h2{
     font-size: 2rem;
