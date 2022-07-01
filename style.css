@@ -33,15 +33,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: 20px;
     padding: 100px;
     border-radius: 10px;
 }
 #box-status h2{
     font-size: 2rem;
+    margin-bottom: 40px;
 }
 #box-status button{
-    font-size: 2rem;
+    font-size: 4rem;
     padding: 10px 15px;
     background-color: rgb(50, 50, 209);
     color: white;
@@ -81,4 +83,8 @@
     font-size: 4rem;
     color: lightseagreen;
     justify-content: center;
+}
+.show-names{
+    font-size: 3rem;
+    
 }

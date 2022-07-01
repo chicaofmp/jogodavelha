@@ -20,17 +20,23 @@
         <div class="box border-top border-left border-right"></div>
         <div class="box border-top"></div>
     </section>
+    <section id="game-status"></section>
     <div>
         <button id="reset">Reset Game</button>
     </div>
     <section id="box-status">
+        <div>
             <h2>Select player:</h2>
             <button onclick="selectPlayerx()" id="playerx">X</button>
             <button onclick="selectPlayero()" id="playero">O</button>
+        </div>
+        <div>
+            <button onclick="askName() ">Players</button>
+            <div id="show-name-x" class="show-names"></div>
+            <div id="show-name-o" class="show-names"></div>
+        </div>
     </section>
-    <section id="winner-container">
-       
-    </section>
+    <section id="winner-container"></section>
     <script src="main.js"></script>
 </body>
 </html>
