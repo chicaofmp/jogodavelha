@@ -5,6 +5,9 @@
     box-sizing: border-box;
     text-align: center;
 }
+body {
+    background-color: #a0d2e5;
+}
 #box-container{
     grid-template-columns: auto auto auto;
     width: 600px;
@@ -43,11 +46,14 @@
     margin-bottom: 40px;
 }
 #box-status button{
-    font-size: 4rem;
+    font-size: 2rem;
     padding: 10px 15px;
-    background-color: rgb(50, 50, 209);
+    background-color: rgb(28, 129, 136);
     color: white;
     border-radius: 10px;
+}
+#box-status button:nth-child(1){
+    background-color: rgb(23, 121, 185);
 }
 #box-status button:hover{
     background-color: crimson;
@@ -62,6 +68,9 @@
 .box:hover{
     background-color: rgb(28, 129, 136);
     opacity: 0.3;
+}
+#select-players h2{
+    color: rgb(28, 129, 136);
 }
 #reset{
     padding: 20px;
@@ -85,6 +94,6 @@
     justify-content: center;
 }
 .show-names{
-    font-size: 3rem;
+    font-size: 2rem;
     
 }
