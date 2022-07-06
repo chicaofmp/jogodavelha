@@ -69,7 +69,10 @@ function selectPlayerx() {
         selectPlayerStyle.display = 'none'
         boxContainer.style.display = 'grid'
         reset.style.display = 'flex'
-        gameStatus.style.display = 'inline-block'
+        gameStatus.style.display = 'flex'
+        gameStatus.style.color = 'darkblue'
+        gameStatus.style.backgroundColor = 'lightblue'
+        gameStatus.style.fontSize = '2rem'
         
     }
 }
@@ -81,13 +84,16 @@ function selectPlayero() {
         selectPlayerStyle.display = 'none'
         boxContainer.style.display = 'grid'
         reset.style.display = 'flex'
-        gameStatus.style.display = 'inline-block'
+        gameStatus.style.display = 'flex'
+        gameStatus.style.color = 'red'
+        gameStatus.style.backgroundColor = 'lightblue'
+        gameStatus.style.fontSize = '2rem'
     }
 }
 
 function askName() {
-    playerxName = prompt("Player X, What is your name?")
-    playeroName = prompt("Player O, What is your name?")
+    playerxName = prompt('Player X, What is your name?')
+    playeroName = prompt('Player O, What is your name?')
     if((playeroName === '') || (playeroName === null) || (playerxName === '') || (playerxName === null)) {
         playeroName = 'Sem nome'
         playerxName = 'Sem nome'
@@ -112,10 +118,12 @@ function playerturn() {
         
         if(currentPlayer === playerX) {
             console.log('Player X turn')
-            gameStatus.innerHTML = 'Player ' + currentPlayer + ' : ' + '[' + playerxName  +  '] Your turn'
+            gameStatus.style.justifyContent = 'center'
+            gameStatus.innerHTML = 'Player ' + currentPlayer + ' : ' + playerxName  +  ', Your turn'
         } else if(currentPlayer === playerO) {
             console.log('Player O Turn')
-            gameStatus.innerHTML = 'Player ' + currentPlayer + ' : ' + '[' + playeroName + '] Your turn'
+            gameStatus.style.justifyContent = 'center'
+            gameStatus.innerHTML = 'Player ' + currentPlayer + ' : ' + playeroName + ', Your turn'
         }
     }
 }
@@ -125,36 +133,36 @@ function winningCombinations() {
     //Checking ROWS Combinations
 
         if((boxes[0].innerHTML === boxes[1].innerHTML) && (boxes[1].innerHTML === boxes[2].innerHTML) && (boxes[1].innerHTML !== '')) {
-            console.log("WINNER First ROW")
+            console.log('WINNER First ROW')
             return true
         } else if ((boxes[3].innerHTML === boxes[4].innerHTML) && (boxes[4].innerHTML === boxes[5].innerHTML) && (boxes[4].innerHTML !== '')) {
-            console.log("WINNER Second ROW")
+            console.log('WINNER Second ROW')
             return true
         } else if((boxes[6].innerHTML === boxes[7].innerHTML) && (boxes[7].innerHTML === boxes[8].innerHTML) && (boxes[8].innerHTML !== '')) {
-            console.log("Winner Third ROW")
+            console.log('Winner Third ROW')
             return true
         } 
     
     //Checking Columns Combinations
     
         if((boxes[0].innerHTML === boxes[3].innerHTML) && (boxes[3].innerHTML === boxes[6].innerHTML) && (boxes[6].innerHTML !== '')) {
-            console.log("WINNER First Column")
+            console.log('WINNER First Column')
             return true
         } else if ((boxes[1].innerHTML === boxes[4].innerHTML) && (boxes[4].innerHTML === boxes[7].innerHTML) && (boxes[7].innerHTML !== '')) {
-            console.log("WINNER Second Column")
+            console.log('WINNER Second Column')
             return true
         } else if((boxes[2].innerHTML === boxes[5].innerHTML) && (boxes[5].innerHTML === boxes[8].innerHTML) && (boxes[8].innerHTML !== '')) {
-            console.log("Winner Third Column")
+            console.log('Winner Third Column')
             return true
         } 
     
     //Checking Diagonal Combinations
 
         if((boxes[0].innerHTML === boxes[4].innerHTML) && (boxes[4].innerHTML === boxes[8].innerHTML) && (boxes[8].innerHTML !== '')) {
-            console.log("WINNER First Diagonal")
+            console.log('WINNER First Diagonal')
             return true
         } else if ((boxes[2].innerHTML === boxes[4].innerHTML) && (boxes[4].innerHTML === boxes[6].innerHTML) && (boxes[6].innerHTML !== '')) {
-            console.log("WINNER Second Diagonal")
+            console.log('WINNER Second Diagonal')
             return true       
     }
 }
@@ -166,7 +174,7 @@ function draw() {
         
         if((boxes[0].innerHTML !== '') && (boxes[1].innerHTML !== '') && (boxes[2].innerHTML !== '') && (boxes[3].innerHTML !== '') && (boxes[4].innerHTML !== '') && (boxes[5].innerHTML !== '') && (boxes[6].innerHTML !== '') && (boxes[7].innerHTML !== '') && (boxes[8].innerHTML !== '') && (winningCombinations !== true)) {
 
-            console.log("DRAW GAME")
+            console.log('DRAW GAME')
             gameStatus.style.display = 'none'
             winnerContainer.style.display = 'flex'
             winnerContainer.innerHTML = 'DRAW GAME!'
@@ -179,11 +187,11 @@ function stopGame() {
     if(winningCombinations() === true) {
         if(currentPlayer === playerX){
             currentPlayer = playerO
-            winnerContainer.innerHTML = 'The Winner is ' + playerO + ' , ' + playeroName
+            winnerContainer.innerHTML = 'The Winner is ' + playerO + ': ' + playeroName
             gameStatus.style.display = 'none'
         } else if(currentPlayer === playerO) {
             currentPlayer = playerX
-            winnerContainer.innerHTML = 'The Winner is ' + playerX + ' , ' + playerxName
+            winnerContainer.innerHTML = 'The Winner is ' + playerX + ': ' + playerxName
             gameStatus.style.display = 'none'
         }
         winnerContainer.style.display = 'flex'
