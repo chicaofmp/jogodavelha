@@ -40,8 +40,12 @@ for (let i = 0; i < boxes.length; i++) {
 function changePlayer() {
     if(currentPlayer === playerX) {
         currentPlayer = playerO
+        gameStatus.style.color = 'white'
+        gameStatus.style.backgroundColor = 'DarkCyan'
     } else {
         currentPlayer = playerX
+        gameStatus.style.color = 'darkblue'
+        gameStatus.style.backgroundColor = 'Crimson'
     }
 }
 
@@ -70,8 +74,6 @@ function selectPlayerx() {
         boxContainer.style.display = 'grid'
         reset.style.display = 'flex'
         gameStatus.style.display = 'flex'
-        gameStatus.style.color = 'darkblue'
-        gameStatus.style.backgroundColor = 'lightblue'
         gameStatus.style.fontSize = '2rem'
         
     }
@@ -85,8 +87,6 @@ function selectPlayero() {
         boxContainer.style.display = 'grid'
         reset.style.display = 'flex'
         gameStatus.style.display = 'flex'
-        gameStatus.style.color = 'red'
-        gameStatus.style.backgroundColor = 'lightblue'
         gameStatus.style.fontSize = '2rem'
     }
 }
