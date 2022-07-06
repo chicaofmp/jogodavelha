@@ -22,6 +22,9 @@ for (let i = 0; i < boxes.length; i++) {
    
     selectPlayers.style.display = 'none'
     function checkBox() {
+        if(winningCombinations()){
+            return
+        }
         if(element.innerHTML === '') {
             element.innerHTML = currentPlayer
             winningCombinations()
@@ -175,11 +178,11 @@ function draw() {
 function stopGame() {
     if(winningCombinations() === true) {
         if(currentPlayer === playerX){
-            currentPlayer = ''
+            currentPlayer = playerO
             winnerContainer.innerHTML = 'The Winner is ' + playerO + ' , ' + playeroName
             gameStatus.style.display = 'none'
         } else if(currentPlayer === playerO) {
-            currentPlayer = ''
+            currentPlayer = playerX
             winnerContainer.innerHTML = 'The Winner is ' + playerX + ' , ' + playerxName
             gameStatus.style.display = 'none'
         }
