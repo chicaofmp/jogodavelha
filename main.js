@@ -28,6 +28,7 @@ for (let i = 0; i < boxes.length; i++) {
     selectPlayers.style.display = 'none'
     function checkBox() {
         if(winningCombinations()){
+            winnerContainer.style.display = 'flex'
             return
         }
         if(element.innerHTML === '') {
@@ -151,13 +152,13 @@ function winningCombinations() {
         if((boxes[0].innerHTML === boxes[1].innerHTML) && (boxes[1].innerHTML === boxes[2].innerHTML) && (boxes[1].innerHTML !== '')) {
             console.log('WINNER First ROW')
             if(currentPlayer === playerO) {
-            boxes[0].style.backgroundColor = 'aquamarine'
-            boxes[1].style.backgroundColor = 'aquamarine'
-            boxes[2].style.backgroundColor = 'aquamarine'
+                boxes[0].style.backgroundColor = 'aquamarine'
+                boxes[1].style.backgroundColor = 'aquamarine'
+                boxes[2].style.backgroundColor = 'aquamarine'
         }   else if(currentPlayer === playerX) {
-            boxes[0].style.backgroundColor = 'lightcoral'
-            boxes[1].style.backgroundColor = 'lightcoral'
-            boxes[2].style.backgroundColor = 'lightcoral'
+                boxes[0].style.backgroundColor = 'lightcoral'
+                boxes[1].style.backgroundColor = 'lightcoral'
+                boxes[2].style.backgroundColor = 'lightcoral' 
         }
             winnerAudio.play()
             return true

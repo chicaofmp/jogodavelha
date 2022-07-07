@@ -80,7 +80,8 @@ body {
     font-family: 'Fredericka the Great', cursive;
     color: blue;
 }
-.box:hover{
+.box:hover::after{
+    content: '';
     background-color: rgb(28, 129, 136);
     opacity: 0.3;
 }
@@ -124,8 +125,8 @@ body {
 }
 #winner-container{
     display: none;
-    font-size: 4rem;
-    color: lightseagreen;
+    font-size: 2.5rem;
+    color: rgb(14, 32, 71);
     justify-content: center;
     
 }
@@ -182,8 +183,7 @@ body {
     #winner-container{
         font-size: 2.5rem;
         margin-top: 30px;
-        color: rgb(40, 92, 74);
-        background-color: white;
-    }
+        color: crimson;        background-color: white;
+            }
 
 } 
