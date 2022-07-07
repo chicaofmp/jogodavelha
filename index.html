@@ -9,35 +9,40 @@
 
 </head>
 <body>
-    <h1 id="title">#Tic tac toe!</h1>
-    <section id="box-container">
-        <div class="box "></div>
-        <div class="box border-left border-right"></div>
-        <div class="box "></div>
-        <div class="box border-top"></div>
-        <div class="box border-top border-left border-right"></div>
-        <div class="box border-top"></div>
-        <div class="box border-top"></div>
-        <div class="box border-top border-left border-right"></div>
-        <div class="box border-top"></div>
-    </section>
-    <section id="game-status"></section>
-    <div id="reset-btn">
-        <button id="reset">Reset Game</button>
-    </div>
-    <section id="box-status">
-        <div id="select-players">
-            <h2>Select player:</h2>
-            <button onclick="selectPlayerx()" id="playerx">X</button>
-            <button onclick="selectPlayero();" id="playero">O</button>
+    <header>
+        <h1 id="title">#Tic tac toe!</h1>
+    </header>
+    <main>
+        <section id="box-container">
+            <div class="box "></div>
+            <div class="box border-left border-right"></div>
+            <div class="box "></div>
+            <div class="box border-top"></div>
+            <div class="box border-top border-left border-right"></div>
+            <div class="box border-top"></div>
+            <div class="box border-top"></div>
+            <div class="box border-top border-left border-right"></div>
+            <div class="box border-top"></div>
+        </section>
+        <section id="game-status"></section>
+        <div id="reset-btn">
+            <button id="reset">Reset Game</button>
         </div>
-        <div id="ask-name">
-            <button class="btn" onclick="askName() ">Insert Players Name</button>
-            <div id="show-name-x" class="show-names"></div>
-            <div id="show-name-o" class="show-names"></div>
-        </div>
-    </section>
-    <section id="winner-container"></section>
+        <section id="box-status">
+            <div id="select-players">
+                <h2>Select player:</h2>
+                <button onclick="selectPlayerx()" id="playerx">X</button>
+                <button onclick="selectPlayero();" id="playero">O</button>
+            </div>
+            <div id="ask-name">
+                <button class="btn" onclick="askName() ">Insert Players Name</button>
+                <div id="show-name-x" class="show-names"></div>
+                <div id="show-name-o" class="show-names"></div>
+                <div id="winner-container"></div>
+            </div>
+        </section>
+    </main>
+    <div id="winner-container"></div>
     <script src="main.js"></script>
 </body>
 </html>

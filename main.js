@@ -19,6 +19,8 @@ const checkingBoxAudio = new Audio()
 checkingBoxAudio.src = './audio/choosingbox.mp3'
 const winnerAudio = new Audio()
 winnerAudio.src = './audio/level_clear.wav'
+const drawAudio = new Audio()
+drawAudio.src = './audio/draw.wav'
 
 for (let i = 0; i < boxes.length; i++) {
     let element = boxes[i];
@@ -269,6 +271,7 @@ function draw() {
         if((boxes[0].innerHTML !== '') && (boxes[1].innerHTML !== '') && (boxes[2].innerHTML !== '') && (boxes[3].innerHTML !== '') && (boxes[4].innerHTML !== '') && (boxes[5].innerHTML !== '') && (boxes[6].innerHTML !== '') && (boxes[7].innerHTML !== '') && (boxes[8].innerHTML !== '') && (winningCombinations !== true)) {
 
             console.log('DRAW GAME')
+            drawAudio.play()
             boxes[0].style.backgroundColor = 'gray'
             boxes[1].style.backgroundColor = 'gray'
             boxes[2].style.backgroundColor = 'gray'
