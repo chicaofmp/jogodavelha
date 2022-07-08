@@ -80,8 +80,7 @@ body {
     font-family: 'serif', 'Fredericka the Great',  cursive;
     color: blue;
 }
-.box:hover::after{
-    content: '';
+.box:hover{
     background-color: rgb(28, 129, 136);
     opacity: 0.3;
 }

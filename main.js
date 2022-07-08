@@ -151,11 +151,11 @@ function winningCombinations() {
 
         if((boxes[0].innerHTML === boxes[1].innerHTML) && (boxes[1].innerHTML === boxes[2].innerHTML) && (boxes[1].innerHTML !== '')) {
             console.log('WINNER First ROW')
-            if(currentPlayer === playerO) {
+            if(boxes[0].innerHTML === 'O') {
                 boxes[0].style.backgroundColor = 'aquamarine'
                 boxes[1].style.backgroundColor = 'aquamarine'
                 boxes[2].style.backgroundColor = 'aquamarine'
-        }   else if(currentPlayer === playerX) {
+        }   else if(boxes[0].innerHTML === 'X') {
                 boxes[0].style.backgroundColor = 'lightcoral'
                 boxes[1].style.backgroundColor = 'lightcoral'
                 boxes[2].style.backgroundColor = 'lightcoral' 
@@ -164,11 +164,11 @@ function winningCombinations() {
             return true
         } else if ((boxes[3].innerHTML === boxes[4].innerHTML) && (boxes[4].innerHTML === boxes[5].innerHTML) && (boxes[4].innerHTML !== '')) {
             console.log('WINNER Second ROW')
-            if(currentPlayer === playerO) {
+            if(boxes[3].innerHTML === 'O') {
                 boxes[3].style.backgroundColor = 'aquamarine'
                 boxes[4].style.backgroundColor = 'aquamarine'
                 boxes[5].style.backgroundColor = 'aquamarine'
-            }   else if(currentPlayer === playerX) {
+            }   else if(boxes[3].innerHTML === 'X') {
                 boxes[3].style.backgroundColor = 'lightcoral'
                 boxes[4].style.backgroundColor = 'lightcoral'
                 boxes[5].style.backgroundColor = 'lightcoral'
@@ -177,11 +177,11 @@ function winningCombinations() {
             return true
         } else if((boxes[6].innerHTML === boxes[7].innerHTML) && (boxes[7].innerHTML === boxes[8].innerHTML) && (boxes[8].innerHTML !== '')) {
             console.log('Winner Third ROW')
-            if(currentPlayer === playerO) {
+            if(boxes[6].innerHTML === 'O') {
                 boxes[6].style.backgroundColor = 'aquamarine'
                 boxes[7].style.backgroundColor = 'aquamarine'
                 boxes[8].style.backgroundColor = 'aquamarine'
-            }   else if(currentPlayer === playerX) {
+            }   else if(boxes[6].innerHTML === 'X') {
                 boxes[6].style.backgroundColor = 'lightcoral'
                 boxes[7].style.backgroundColor = 'lightcoral'
                 boxes[8].style.backgroundColor = 'lightcoral'
@@ -194,11 +194,11 @@ function winningCombinations() {
     
         if((boxes[0].innerHTML === boxes[3].innerHTML) && (boxes[3].innerHTML === boxes[6].innerHTML) && (boxes[6].innerHTML !== '')) {
             console.log('WINNER First Column')
-            if(currentPlayer === playerO) {
+            if(boxes[0].innerHTML === 'O') {
                 boxes[0].style.backgroundColor = 'aquamarine'
                 boxes[3].style.backgroundColor = 'aquamarine'
                 boxes[6].style.backgroundColor = 'aquamarine'
-            }   else if(currentPlayer === playerX) {
+            }   else if(boxes[0].innerHTML === 'X') {
                 boxes[0].style.backgroundColor = 'lightcoral'
                 boxes[3].style.backgroundColor = 'lightcoral'
                 boxes[6].style.backgroundColor = 'lightcoral'
@@ -207,11 +207,11 @@ function winningCombinations() {
             return true
         } else if ((boxes[1].innerHTML === boxes[4].innerHTML) && (boxes[4].innerHTML === boxes[7].innerHTML) && (boxes[7].innerHTML !== '')) {
             console.log('WINNER Second Column')
-            if(currentPlayer === playerO) {
+            if(boxes[1].innerHTML === 'O') {
                 boxes[1].style.backgroundColor = 'aquamarine'
                 boxes[4].style.backgroundColor = 'aquamarine'
                 boxes[7].style.backgroundColor = 'aquamarine'
-            }   else if(currentPlayer === playerX) {
+            }   else if(boxes[1].innerHTML === 'X') {
                 boxes[1].style.backgroundColor = 'lightcoral'
                 boxes[4].style.backgroundColor = 'lightcoral'
                 boxes[7].style.backgroundColor = 'lightcoral'
@@ -220,11 +220,11 @@ function winningCombinations() {
             return true
         } else if((boxes[2].innerHTML === boxes[5].innerHTML) && (boxes[5].innerHTML === boxes[8].innerHTML) && (boxes[8].innerHTML !== '')) {
             console.log('Winner Third Column')
-            if(currentPlayer === playerO) {
+            if(boxes[2].innerHTML === 'O') {
                 boxes[2].style.backgroundColor = 'aquamarine'
                 boxes[5].style.backgroundColor = 'aquamarine'
                 boxes[8].style.backgroundColor = 'aquamarine'
-            }   else if(currentPlayer === playerX) {
+            }   else if(boxes[2].innerHTML === 'X') {
                 boxes[2].style.backgroundColor = 'lightcoral'
                 boxes[5].style.backgroundColor = 'lightcoral'
                 boxes[8].style.backgroundColor = 'lightcoral'
@@ -237,11 +237,11 @@ function winningCombinations() {
 
         if((boxes[0].innerHTML === boxes[4].innerHTML) && (boxes[4].innerHTML === boxes[8].innerHTML) && (boxes[8].innerHTML !== '')) {
             console.log('WINNER First Diagonal')
-            if(currentPlayer === playerO) {
+            if(boxes[0].innerHTML === 'O') {
                 boxes[0].style.backgroundColor = 'aquamarine'
                 boxes[4].style.backgroundColor = 'aquamarine'
                 boxes[8].style.backgroundColor = 'aquamarine'
-            }   else if(currentPlayer === playerX) {
+            }   else if(boxes[0].innerHTML === 'X') {
                 boxes[0].style.backgroundColor = 'lightcoral'
                 boxes[4].style.backgroundColor = 'lightcoral'
                 boxes[8].style.backgroundColor = 'lightcoral'
@@ -250,11 +250,11 @@ function winningCombinations() {
             return true
         } else if ((boxes[2].innerHTML === boxes[4].innerHTML) && (boxes[4].innerHTML === boxes[6].innerHTML) && (boxes[6].innerHTML !== '')) {
             console.log('WINNER Second Diagonal')
-            if(currentPlayer === playerO) {
+            if(boxes[2].innerHTML === 'O') {
                 boxes[2].style.backgroundColor = 'aquamarine'
                 boxes[4].style.backgroundColor = 'aquamarine'
                 boxes[6].style.backgroundColor = 'aquamarine'
-            }   else if(currentPlayer === playerX) {
+            }   else if(boxes[2].innerHTML === 'X') {
                 boxes[2].style.backgroundColor = 'lightcoral'
                 boxes[4].style.backgroundColor = 'lightcoral'
                 boxes[6].style.backgroundColor = 'lightcoral'
@@ -304,4 +304,3 @@ function stopGame() {
         winnerContainer.style.display = 'flex'
     }
 }
-
