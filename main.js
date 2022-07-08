@@ -41,12 +41,14 @@ for (let i = 0; i < boxes.length; i++) {
             element.innerHTML = currentPlayer
 
             if(currentPlayer === 'X') {
+                element.style.cursor = 'crosshair'
                 element.style.color = 'red'
             } else if(currentPlayer === 'O') {
+                element.style.cursor = 'wait'
                 element.style.color = 'blue'
             }
             
-
+            
 
             checkingBoxAudio.play()
             winningCombinations()
@@ -151,7 +153,7 @@ function playerturn() {
     for (let i = 0; i < boxes.length; i++) {
         let element = boxes[i];
         
-        gameStatus.style.width = '450px'
+        gameStatus.style.width = '300px'
         gameStatus.style.margin = '0 auto'
         gameStatus.style.borderRadius = "10px"
 
@@ -314,7 +316,7 @@ function stopGame() {
 
     
     winnerContainer.style.borderRadius = '10px'
-    winnerContainer.style.width = '450px'
+    winnerContainer.style.width = '300px'
     winnerContainer.style.margin = '0 auto'
 
     if(winningCombinations() === true) {

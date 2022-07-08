@@ -103,10 +103,10 @@ body {
     border: 2px groove crimson;
     display: none;
     justify-content: center;
-    text-align: center;
     width: 300px;
 }
 #title{
+    width: 100%;
     font-size: 2rem;
     color: rgb(24, 71, 55);
     background-color: beige;
@@ -127,7 +127,6 @@ body {
     font-size: 2.5rem;
     color: rgb(14, 32, 71);
     justify-content: center;
-    
 }
 .show-names{
     font-size: 2rem;    
