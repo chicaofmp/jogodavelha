@@ -12,27 +12,42 @@ let reset = document.querySelector('#reset')
 let selectPlayerStyle = document.querySelector('#box-status').style
 let boxContainer = document.querySelector('#box-container')
 let winnerContainer = document.querySelector('#winner-container')
+
 // Audio Files
 const selectPlayerAudio = new Audio()
 selectPlayerAudio.src = './audio/choosingXorO.mp3'
+
 const checkingBoxAudio = new Audio()
 checkingBoxAudio.src = './audio/choosingbox.mp3'
+
 const winnerAudio = new Audio()
 winnerAudio.src = './audio/level_clear.wav'
+
 const drawAudio = new Audio()
 drawAudio.src = './audio/draw.wav'
 
 for (let i = 0; i < boxes.length; i++) {
     let element = boxes[i];
    
+
+
     selectPlayers.style.display = 'none'
+
     function checkBox() {
         if(winningCombinations()){
-            winnerContainer.style.display = 'flex'
             return
         }
         if(element.innerHTML === '') {
             element.innerHTML = currentPlayer
+
+            if(currentPlayer === 'X') {
+                element.style.color = 'red'
+            } else if(currentPlayer === 'O') {
+                element.style.color = 'blue'
+            }
+            
+
+
             checkingBoxAudio.play()
             winningCombinations()
             draw()
@@ -45,6 +60,7 @@ for (let i = 0; i < boxes.length; i++) {
 }
 
 function changePlayer() {
+
     if(currentPlayer === playerX) {
         currentPlayer = playerO
         gameStatus.style.color = 'white'
@@ -112,8 +128,8 @@ function askName() {
     playerxName = prompt('Player X, What is your name?')
     playeroName = prompt('Player O, What is your name?')
     if((playeroName === '') || (playeroName === null) || (playerxName === '') || (playerxName === null)) {
-        playeroName = 'Sem nome'
-        playerxName = 'Sem nome'
+        playeroName = 'No Name'
+        playerxName = 'No Name'
     }
     selectPlayers.style.display = 'inline-block'
     showName1()
@@ -123,23 +139,27 @@ function askName() {
 
 function showName1() {
     showNameX.innerHTML = 'Player X: ' + playerxName
+    showNameX.style.color = 'red'
 }
 
 function showName2() {
     showNameO.innerHTML = 'Player O: ' + playeroName
+    showNameO.style.color = 'blue'
 }
 
 function playerturn() {
     for (let i = 0; i < boxes.length; i++) {
         let element = boxes[i];
         
+        gameStatus.style.width = '450px'
+        gameStatus.style.margin = '0 auto'
+        gameStatus.style.borderRadius = "10px"
+
         if(currentPlayer === playerX) {
             console.log('Player X turn')
-            gameStatus.style.justifyContent = 'center'
             gameStatus.innerHTML = 'Player ' + currentPlayer + ' : ' + playerxName  +  ', Your turn'
         } else if(currentPlayer === playerO) {
             console.log('Player O Turn')
-            gameStatus.style.justifyContent = 'center'
             gameStatus.innerHTML = 'Player ' + currentPlayer + ' : ' + playeroName + ', Your turn'
         }
     }
@@ -291,13 +311,21 @@ function draw() {
 }
 
 function stopGame() {
+
+    
+    winnerContainer.style.borderRadius = '10px'
+    winnerContainer.style.width = '450px'
+    winnerContainer.style.margin = '0 auto'
+
     if(winningCombinations() === true) {
         if(currentPlayer === playerX){
             currentPlayer = playerO
+            winnerContainer.style.backgroundColor = 'aquamarine'
             winnerContainer.innerHTML = 'The Winner is ' + playerO + ': ' + playeroName
             gameStatus.style.display = 'none'
         } else if(currentPlayer === playerO) {
             currentPlayer = playerX
+            winnerContainer.style.backgroundColor = 'lightcoral'
             winnerContainer.innerHTML = 'The Winner is ' + playerX + ': ' + playerxName
             gameStatus.style.display = 'none'
         }
