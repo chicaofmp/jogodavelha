@@ -77,7 +77,7 @@ body {
 .box {
     font-size: 5rem;
     padding-top: 25px;
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'serif', 'Fredericka the Great',  cursive;
     color: blue;
 }
 .box:hover::after{
