@@ -41,15 +41,11 @@ for (let i = 0; i < boxes.length; i++) {
             element.innerHTML = currentPlayer
 
             if(currentPlayer === 'X') {
-                element.style.cursor = 'crosshair'
                 element.style.color = 'red'
             } else if(currentPlayer === 'O') {
-                element.style.cursor = 'wait'
                 element.style.color = 'blue'
             }
             
-            
-
             checkingBoxAudio.play()
             winningCombinations()
             draw()
@@ -86,7 +82,6 @@ function resetGame() {
         reset.style.display = 'none'
         winnerContainer.style.display = 'none'
         gameStatus.style.display = 'none'
-        selectPlayers.style.display = 'inline-block'
         boxes[0].style.backgroundColor = ''
         boxes[1].style.backgroundColor = ''
         boxes[2].style.backgroundColor = ''
@@ -129,8 +124,9 @@ function selectPlayero() {
 function askName() {
     playerxName = prompt('Player X, What is your name?')
     playeroName = prompt('Player O, What is your name?')
-    if((playeroName === '') || (playeroName === null) || (playerxName === '') || (playerxName === null)) {
+    if((playeroName === '') || (playeroName === null)) {
         playeroName = 'No Name'
+    } else if((playerxName === '') || (playerxName === null)) {
         playerxName = 'No Name'
     }
     selectPlayers.style.display = 'inline-block'
