@@ -124,9 +124,8 @@ function selectPlayero() {
 function askName() {
     playerxName = prompt('Player X, What is your name?')
     playeroName = prompt('Player O, What is your name?')
-    if((playeroName === '') || (playeroName === null)) {
+    if((playeroName === '') || (playeroName === null) || (playerxName === '') || (playerxName === null)) {
         playeroName = 'No Name'
-    } else if((playerxName === '') || (playerxName === null)) {
         playerxName = 'No Name'
     }
     selectPlayers.style.display = 'inline-block'
